@@ -10,6 +10,7 @@ determine the maximum amount of money you can rob tonight without alerting the p
 
 class Solution {
 public:
+    /* O(n) time with O(1) space */
     int rob(vector<int>& nums) {
         
         int n = nums.size();
@@ -31,6 +32,23 @@ public:
         }
         
         return a[i-1];
+        
+    }
+    
+    /* O(n) time with O(1) space */
+    int rob(vector<int>& nums) {
+        
+        int n = nums.size();
+        int rob = 0;
+        int notrob = 0;
+        
+        for (int i=0;i<n;i++) {
+            int currob = notrob + nums[i];
+            notrob = max(notrob, rob);
+            rob = currob;
+        }
+        
+        return max(rob, notrob);
         
     }
 };
