@@ -1,5 +1,5 @@
 /*
-Assumin the question:
+Assuming the question:
 Given an array that represents balloons with points:
 You have to maximumize points such that when when u burst ai, ai - 1 and ai + 1 are automatically burst.
 Now by bursting such ai gather maximum points.
